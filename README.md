@@ -4,8 +4,8 @@ This repository hosts the implementation of section 3 - "Sample Size for Correla
 
 ## Overview
 
-The provided code focuses on the Delta method, which is suggested for calculating sample sizes in A/B testing when the unit of analysis is smaller than the unit of randomization. Zhou et al. (2023) argue that this approach enhances the assessment of statistical significance, specifically Type I error and power, compared to traditional sample size methods used for independent data.
+The provided code focuses on the Delta method, which is suggested for calculating sample sizes in A/B testing when the unit of analysis is smaller than the unit of randomization. Zhou _et al._ (2023) argue that this approach enhances the assessment of statistical significance, specifically Type I error and power, compared to traditional sample size methods used for independent data.
 
-This repository not only replicates the original comparative analysis but also extends it, focusing on the absolute lift across eleven different scenarios. Our findings support the conclusions drawn by Zhou et al.
+This repository not only replicates the original comparative analysis but also extends it, focusing on the absolute lift across eleven different scenarios. Our findings support the conclusions drawn by Zhou _et al._ (2023).
 
 The original paper can be accessed from the PDF file named "Paper" within this repository. For a detailed explanation of the code and further discussion, please refer to the "Discussion" document.
