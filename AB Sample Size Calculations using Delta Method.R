@@ -3,10 +3,7 @@
 # library(dplyr)     # For data manipulation
 # library(pwr)       # For power of test calculations
 
-
-
 # Data generation process -----------------------------------------------------
-
 set.seed(12)
 
 # Define parameters
@@ -35,8 +32,6 @@ for (i in 1:N) {
 
 
 # Estimating 'h' and 'k' ------------------------------------------------------
-
-
 # Compute 'h' and 'k' for determining sample sizes
 h <- 1 / mean(sess)^2 * (var(conv) - 2 * mean(conv) / mean(sess) * cov(sess, conv) + mean(conv)^2 / mean(sess)^2 * var(sess))
 k <- 2 * h * (qnorm(1 - alpha / 2) + qnorm(1 - beta))^2 / (ate^2)
@@ -47,17 +42,13 @@ max_sess <- k * mean(sess)
 
 
 # Sample size calculation for independent binary data -------------------------
-
 p_pool <- (a_mu + b_mu) / 2   #  pooled proportion
-
 ate <- abs(a_mu - b_mu)       # absolute treatment effect
-
 n <- 2 * p_pool * (1 - p_pool) * (qnorm(1 - alpha / 2) + qnorm(1 - beta))^2 / ate^2
 n
 
 
-
-# Power_corr function  -------------------------
+# Power_corr function  --------------------------------------------------------
 power_corr <- function(N, lambda, a_mu, b_mu, range, num_simulations, alpha) {
   t_stats <- numeric(num_simulations)
   
@@ -93,8 +84,7 @@ power_corr <- function(N, lambda, a_mu, b_mu, range, num_simulations, alpha) {
 
 
 
-# Power_independent i function  -------------------------
-
+# Power_independent i function  -------------------------------------------------
 power_corr_a <- function(N, lambda, a_mu, b_mu, range, num_simulations, alpha, target_sessions) {
   t_stats <- numeric(num_simulations)
   
@@ -150,8 +140,7 @@ power_corr_a <- function(N, lambda, a_mu, b_mu, range, num_simulations, alpha, t
 
 
 
-# Power_independent ii function  -------------------------
-
+# Power_independent ii function  -------------------------------------------------
 power_corr_b <- function(N, lambda, a_mu, b_mu, range, num_simulations, alpha, max_sessions) {
   
   t_stats <- numeric(num_simulations)
@@ -202,7 +191,7 @@ power_corr_b <- function(N, lambda, a_mu, b_mu, range, num_simulations, alpha, m
 
 
 
-# Parameters  -------------------------
+# Parameters  --------------------------------------------------------------
 # Example usage
 N <- k
 lambda <- 5
@@ -216,7 +205,5 @@ target_sessions <- n*2
 max_sessions <- max_sess
 
 power_corr <- power_corr(N, lambda, a_mu, b_mu, range, num_simulations, alpha)
-
 power_corr_a <- power_corr_a(N, lambda, a_mu, b_mu, range, num_simulations, alpha, target_sessions)
-
 power_corr_b <- power_corr_b(N, lambda, a_mu, b_mu, range, num_simulations, alpha, max_sessions)
