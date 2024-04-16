@@ -1,4 +1,4 @@
-# Sample Size Calculations for A/B Testing: Novel Extensions & Practical Guide_
+# Sample Size Calculations for A/B Testing: Novel Extensions & Practical Guide
 
 This repository hosts the implementation of section 3 - "Sample Size for Correlated Data" from the paper _"All about Sample-Size Calculations for A/B Testing: Novel Extensions & Practical Guide"_ by Jing Zhou, Jiannan Lu, Anas Shallah, published in August 2023. The full paper is available [here](https://arxiv.org/abs/2305.16459).
 
